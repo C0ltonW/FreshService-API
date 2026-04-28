@@ -1,0 +1,9 @@
+DEFAULT_PER_PAGE = 100
+DEFAULT_MAX_PAGES = 100
+
+
+class TicketStatus:
+    OPEN = 2
+    PENDING = 3
+    RESOLVED = 4
+    CLOSED = 5
