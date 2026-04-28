@@ -242,10 +242,21 @@ While it is actively used and stable for its intended purposes,
 the API surface may continue to evolve.
 Backwards-compatible changes are preferred but not guaranteed.
 --------------------------------------------------------------------
+## LICENSE
 
-LICENSE
+This project is licensed under the MIT License.
 
-Internal or project-specific use.
-See repository licensing terms if applicable.
+Commercial Support / Custom Work
+
+This library is free to use under the MIT license.
+
+If you are interested in:
+- Paid support
+- Custom enhancements
+- Consulting or integration work
+- Using this code as part of a proprietary system
+
+Feel free to reach out via GitHub.
 
 --------------------------------------------------------------------
+
