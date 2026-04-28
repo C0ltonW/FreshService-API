@@ -6,7 +6,7 @@ This repository intentionally does NOT include a `main.py`, CLI, or executable e
 
 --------------------------------------------------------------------
 
-OVERVIEW
+## Overview
 
 This client was built to solve common problems encountered when working with the Freshservice API:
 
@@ -20,7 +20,7 @@ The client centralizes those concerns so downstream scripts remain small, explic
 
 --------------------------------------------------------------------
 
-FEATURES
+## Features
 
 • Automatic retries with exponential backoff
 • Global request timeouts (prevents hung connections)
@@ -34,7 +34,7 @@ FEATURES
 
 --------------------------------------------------------------------
 
-DESIGN PHILOSOPHY
+## Design Philosophy
 
 This client follows a few strict rules:
 
@@ -52,9 +52,10 @@ This client follows a few strict rules:
 
 --------------------------------------------------------------------
 
-INSTALLATION
+## Installation
 
 This repository is intended to be vendored or installed directly.
+No PyPI package is provided at this time.
 
 Clone the repository:
 
@@ -66,7 +67,7 @@ Add it to your project or PYTHONPATH and import the client:
 
 --------------------------------------------------------------------
 
-BASIC USAGE
+## Basic Usage
 
     from freshservice import FreshserviceClient
 
@@ -86,17 +87,16 @@ The context manager guarantees the underlying HTTP session is closed cleanly.
 
 --------------------------------------------------------------------
 
-COMMON OPERATIONS
+# COMMON OPERATIONS
 
-GET A TICKET
-
+## Get a ticket
     ticket = fs.get_ticket(123, include_requester=True)
 
 Returns a `FreshTicket` Pydantic model when possible. Fields may be partially populated depending on the endpoint.
 
 --------------------------------------------------------------------
 
-GET ALL OPEN TICKET IDS
+## Get all open ticket IDs
 
     open_ids = fs.get_all_open_ticket_ids()
 
@@ -104,7 +104,7 @@ Returns a list of ticket IDs with Open or Pending status.
 
 --------------------------------------------------------------------
 
-FILTER TICKETS BY AGENT
+## Filter tickets by agent
 
     tickets = fs.filter_tickets_by_agent(
         agent_id=456,
@@ -115,8 +115,7 @@ Uses the Freshservice filter API and supports pagination automatically.
 
 --------------------------------------------------------------------
 
-CREATE A TICKET
-
+## Create a ticket
     ticket = fs.create_ticket(
         subject="VPN Not Working",
         description="User unable to connect to VPN",
@@ -125,8 +124,7 @@ CREATE A TICKET
 
 --------------------------------------------------------------------
 
-ADD A PRIVATE NOTE
-
+## Add a private note
     fs.add_ticket_note(
         ticket_id=123,
         body="Internal troubleshooting started.",
@@ -135,8 +133,7 @@ ADD A PRIVATE NOTE
 
 --------------------------------------------------------------------
 
-REPLY PUBLICLY TO A TICKET
-
+## Reply publicly to a ticket
     fs.reply_to_ticket(
         ticket_id=123,
         body="Thanks for reporting this. We're investigating now.",
@@ -144,8 +141,7 @@ REPLY PUBLICLY TO A TICKET
 
 --------------------------------------------------------------------
 
-UPDATE A TICKET
-
+## Update a ticket
     fs.update_ticket(
         ticket_id=123,
         status=4,
@@ -156,7 +152,7 @@ Only fields explicitly provided are updated.
 
 --------------------------------------------------------------------
 
-BULK UPDATE TICKETS
+## Bulk Update Tickets
 
     fs.bulk_update_tickets(
         ticket_ids=[101, 102, 103],
@@ -167,7 +163,7 @@ Significantly faster and safer than looping updates.
 
 --------------------------------------------------------------------
 
-SEARCH TICKETS
+## Search Tickets
 
     results = fs.search_tickets('subject:"VPN Issue"')
 
@@ -175,7 +171,7 @@ Uses Freshservice's search API for flexible matching.
 
 --------------------------------------------------------------------
 
-ERROR HANDLING
+## Error Handling
 
 All API-level failures raise `FreshserviceAPIError`.
 
@@ -191,7 +187,7 @@ Transport errors raise standard `requests` exceptions.
 
 --------------------------------------------------------------------
 
-MODELS
+## Models
 
 The client includes optional Pydantic models:
 
@@ -209,7 +205,7 @@ Not all endpoints return fully populated objects.
 
 --------------------------------------------------------------------
 
-WHAT THIS CLIENT DOES NOT DO
+## What this client does not do
 
 By design, this client does not include:
 
@@ -223,7 +219,7 @@ Those responsibilities belong in higher-level tooling.
 
 --------------------------------------------------------------------
 
-WHEN TO USE THIS CLIENT
+## When to use this client
 
 • Automation scripts
 • Admin workflows
@@ -235,18 +231,18 @@ If you need a reliable Freshservice API foundation, this client is intended to b
 
 --------------------------------------------------------------------
 
-STABILITY
+## Stability
 
 This project is tagged as version 1.0.0.
 While it is actively used and stable for its intended purposes,
-the API surface may continue to evolve.
-Backwards-compatible changes are preferred but not guaranteed.
+the API surface may continue to evolve. 
+Backwards‑compatible changes are preferred but not guaranteed until a later release.
 --------------------------------------------------------------------
-## LICENSE
+## License
 
 This project is licensed under the MIT License.
 
-Commercial Support / Custom Work
+Commercial Support and Custom Work
 
 This library is free to use under the MIT license.
 
