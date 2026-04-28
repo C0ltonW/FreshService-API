@@ -237,8 +237,10 @@ If you need a reliable Freshservice API foundation, this client is intended to b
 
 STABILITY
 
-Actively used in production; backward‑compatible changes are preferred but not guaranteed.
-
+This project is tagged as version 1.0.0.
+While it is actively used and stable for its intended purposes,
+the API surface may continue to evolve.
+Backwards-compatible changes are preferred but not guaranteed.
 --------------------------------------------------------------------
 
 LICENSE
