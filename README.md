@@ -1,4 +1,4 @@
-Freshservice API Client
+# Freshservice API Client
 
 A robust, reusable Python client for the Freshservice REST API, designed for automation, scripting, and long-term reuse across multiple projects.
 
